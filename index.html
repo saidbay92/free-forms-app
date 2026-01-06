@@ -74,14 +74,13 @@
         submittedBy: document.getElementById("submittedBy").value,
         recipientEmails: document.getElementById("recipientEmails").value,
         data: {
-  Site: document.getElementById("site")?.value,
-  Notes: document.getElementById("notes")?.value,
-  Photo: photoBase64
-}
-const photoInput = document.getElementById("photo");
-let photoBase64 = "";
+          Site: document.getElementById("site")?.value,
+          Notes: document.getElementById("notes")?.value,
+          Photo: photoBase64
+    const photoInput = document.getElementById("photo");
+    let photoBase64 = "";
 
-if (photoInput.files.length > 0) {
+    if (photoInput.files.length > 0) {
   const file = photoInput.files[0];
   const reader = new FileReader();
   await new Promise(resolve => {
@@ -118,6 +117,7 @@ if (photoInput.files.length > 0) {
   </script>
 </body>
 </html>
+
 
 
 
