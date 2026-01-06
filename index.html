@@ -68,6 +68,22 @@
     document.getElementById("submitBtn").addEventListener("click", async () => {
       const status = document.getElementById("status");
       status.textContent = "Sending...";
+      
+      const photoInput = document.getElementById("photo");
+let photoBase64 = "";
+
+if (photoInput.files.length > 0) {
+  const file = photoInput.files[0];
+  const reader = new FileReader();
+  await new Promise(resolve => {
+    reader.onload = () => {
+      photoBase64 = reader.result;
+      resolve();
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
 
       const payload = {
         formName: document.getElementById("formName").value,
@@ -104,5 +120,6 @@
   </script>
 </body>
 </html>
+
 
 
