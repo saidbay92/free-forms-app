@@ -24,8 +24,26 @@
 
   <hr/>
 
+ <div id="storeVisitFields">
   <label>Site / Store</label><br/>
-  <input id="site" style="width:100%;padding:10px;" placeholder="Centrepoint"/><br/><br/>
+  <input id="site" style="width:100%;padding:10px;"><br/><br/>
+
+  <label>Notes</label><br/>
+  <textarea id="notes" style="width:100%;padding:10px;"></textarea><br/><br/>
+</div>
+
+<div id="incidentFields" style="display:none;">
+  <label>Incident Description</label><br/>
+  <textarea id="incidentDesc" style="width:100%;padding:10px;"></textarea><br/><br/>
+
+  <label>Severity</label><br/>
+  <select id="severity" style="width:100%;padding:10px;">
+    <option>Low</option>
+    <option>Medium</option>
+    <option>High</option>
+  </select><br/><br/>
+</div>
+
 
   <label>Notes</label><br/>
   <textarea id="notes" style="width:100%;padding:10px;min-height:120px;" placeholder="What did you find?"></textarea><br/><br/>
@@ -35,6 +53,14 @@
   <p id="status" style="margin-top:12px;"></p>
 
   <script>
+    const formSelect = document.getElementById("formName");
+
+  formSelect.addEventListener("change", () => {
+    document.getElementById("storeVisitFields").style.display =
+      formSelect.value === "Store Visit" ? "block" : "none";
+
+    document.getElementById("incidentFields").style.display =
+      formSelect.value === "Incident Report" ? "block" : "none";
     // 🔴 PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE:
     const ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbzXKW7vDflD4ibJSMq5Ur6g6J4W89wLgK9N3yeve-RZZQrAREoBJDajHntXs46PulRj/exec";
 
@@ -77,4 +103,5 @@
   </script>
 </body>
 </html>
+
 
