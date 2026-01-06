@@ -9,12 +9,8 @@
 <body style="font-family: Arial, sans-serif; max-width: 720px; margin: 0 auto; padding: 16px;">
   <h2>Free Forms App</h2>
 
-<label>Select Form</label><br/>
-<select id="formName" style="width:100%;padding:10px;">
-  <option value="Store Visit">Store Visit</option>
-  <option value="Equipment Checklist">Equipment Checklist</option>
-  <option value="Incident Report">Incident Report</option>
-</select>
+  <label>Form Name</label><br/>
+  <input id="formName" style="width:100%;padding:10px;" value="Store Visit Form"/><br/><br/>
 
   <label>Your Name</label><br/>
   <input id="submittedBy" style="width:100%;padding:10px;" placeholder="Said"/><br/><br/>
@@ -24,47 +20,17 @@
 
   <hr/>
 
- <div id="storeVisitFields">
   <label>Site / Store</label><br/>
-  <input id="site" style="width:100%;padding:10px;"><br/><br/>
-
-  <label>Notes</label><br/>
-  <textarea id="notes" style="width:100%;padding:10px;"></textarea><br/><br/>
-</div>
-
-<div id="incidentFields" style="display:none;">
-  <label>Incident Description</label><br/>
-  <textarea id="incidentDesc" style="width:100%;padding:10px;"></textarea><br/><br/>
-
-  <label>Severity</label><br/>
-  <select id="severity" style="width:100%;padding:10px;">
-    <option>Low</option>
-    <option>Medium</option>
-    <option>High</option>
-  </select><br/><br/>
-</div>
-
+  <input id="site" style="width:100%;padding:10px;" placeholder="Centrepoint"/><br/><br/>
 
   <label>Notes</label><br/>
   <textarea id="notes" style="width:100%;padding:10px;min-height:120px;" placeholder="What did you find?"></textarea><br/><br/>
-  
-  <label>Photo</label><br/>
-<input type="file" id="photo" accept="image/*" capture="environment"><br/><br/>
- 
+
   <button id="submitBtn" style="padding:12px 16px;">Submit & Email PDF</button>
-  
 
   <p id="status" style="margin-top:12px;"></p>
 
   <script>
-    const formSelect = document.getElementById("formName");
-
-  formSelect.addEventListener("change", () => {
-    document.getElementById("storeVisitFields").style.display =
-      formSelect.value === "Store Visit" ? "block" : "none";
-
-    document.getElementById("incidentFields").style.display =
-      formSelect.value === "Incident Report" ? "block" : "none";
     // 🔴 PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE:
     const ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbzXKW7vDflD4ibJSMq5Ur6g6J4W89wLgK9N3yeve-RZZQrAREoBJDajHntXs46PulRj/exec";
 
@@ -107,7 +73,3 @@
   </script>
 </body>
 </html>
-
-
-
-
