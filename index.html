@@ -33,6 +33,7 @@
   <option value="Store Visit">Store Visit</option>
   <option value="Equipment Checklist">Equipment Checklist</option>
   <option value="Incident Report">Incident Report</option>
+  <option value="Formal Review">Formal Review</option>
 </select>
 
 
@@ -44,6 +45,17 @@
 
   <hr/>
 
+
+  <div id="formalReviewFields">
+  <label>Site / Store</label><br/>
+  <input id="site" style="width:100%;padding:10px;"><br/><br/>
+    <label>Manager</label><br/>
+  <input id="Manager" style="width:100%;padding:10px;"><br/><br/>
+
+  <label>Notes</label><br/>
+  <textarea id="notes" style="width:100%;padding:10px;"></textarea><br/><br/>
+</div>
+  
   <div id="storeVisitFields">
   <label>Site / Store</label><br/>
   <input id="site" style="width:100%;padding:10px;"><br/><br/>
@@ -52,6 +64,7 @@
   <textarea id="notes" style="width:100%;padding:10px;"></textarea><br/><br/>
 </div>
 
+  
 <div id="incidentFields" style="display:none;">
   <label>Incident Description</label><br/>
   <textarea id="incidentDesc" style="width:100%;padding:10px;"></textarea><br/><br/>
@@ -137,6 +150,7 @@
   </script>
 </body>
 </html>
+
 
 
 
