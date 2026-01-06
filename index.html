@@ -68,8 +68,17 @@
     document.getElementById("submitBtn").addEventListener("click", async () => {
       const status = document.getElementById("status");
       status.textContent = "Sending...";
-      
-      const photoInput = document.getElementById("photo");
+
+      const payload = {
+        formName: document.getElementById("formName").value,
+        submittedBy: document.getElementById("submittedBy").value,
+        recipientEmails: document.getElementById("recipientEmails").value,
+        data: {
+          Site: document.getElementById("site").value,
+          Notes: document.getElementById("notes").value
+        }
+      };
+const photoInput = document.getElementById("photo");
 let photoBase64 = "";
 
 if (photoInput.files.length > 0) {
@@ -83,17 +92,6 @@ if (photoInput.files.length > 0) {
     reader.readAsDataURL(file);
   });
 }
-
-
-      const payload = {
-        formName: document.getElementById("formName").value,
-        submittedBy: document.getElementById("submittedBy").value,
-        recipientEmails: document.getElementById("recipientEmails").value,
-        data: {
-          Site: document.getElementById("site").value,
-          Notes: document.getElementById("notes").value
-        }
-      };
 
       try {
         const res = await fetch(ENDPOINT_URL, {
@@ -120,6 +118,7 @@ if (photoInput.files.length > 0) {
   </script>
 </body>
 </html>
+
 
 
 
