@@ -74,10 +74,10 @@
         submittedBy: document.getElementById("submittedBy").value,
         recipientEmails: document.getElementById("recipientEmails").value,
         data: {
-          Site: document.getElementById("site").value,
-          Notes: document.getElementById("notes").value
-        }
-      };
+  Site: document.getElementById("site")?.value,
+  Notes: document.getElementById("notes")?.value,
+  Photo: photoBase64
+}
 const photoInput = document.getElementById("photo");
 let photoBase64 = "";
 
@@ -118,6 +118,7 @@ if (photoInput.files.length > 0) {
   </script>
 </body>
 </html>
+
 
 
 
